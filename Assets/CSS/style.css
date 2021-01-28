@@ -1,1 +1,117 @@
-.
+#weatherBackground {
+    background-size: cover;
+    background-position:center center;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    position:relative;
+}
+#mainDashboard {
+    padding-top: 6rem;
+}
+
+#searchContainer {
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 1.5rem;
+    border-radius: 5px;
+    display:block;
+}
+
+input:focus, button:focus {
+    outline:none;
+}
+
+.historyContainer {
+    margin-top: 1rem;
+}
+
+.cityBtn {
+    width: 100%;
+    display: block;
+    margin-bottom: 1rem;
+    padding: 10px 0;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(122, 118, 118, 0.75)
+}
+
+#cityTitle {
+    /* font-size: 2rem; */
+    font-weight: 300;
+    color: #fff;
+}
+
+#currentDay {
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#cityTemp {
+    font-size: 6rem;
+    color: #fff;
+    font-weight: 200;
+    padding-top: 2rem;
+    display:inline-block;
+    vertical-align:bottom;
+}
+
+#cityConditions {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    color: #fff;
+    font-weight:200;
+}
+
+h6 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+#cityHumidity,#cityWind,#cityUVI { color: #fff;}
+
+#fiveDayWeather {
+    color: #fff;
+    padding-top: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+#cityUVI span {
+    display:inline-block;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+.clearfix:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+@media screen and (max-width: 991px) {
+    #searchContainer {
+        position: fixed;
+        top: 3.2rem;
+        left: 0;
+        width: 100%;
+        background-color:#e9ecef;
+        border-radius: 0;
+        display:none;
+    }
+    .fiveDayItem img {
+        width: 50px;
+        height: auto;
+    }
+}
+@media screen and (max-width: 767px) {
+    #fiveDayWeather {
+        padding-top: 0;
+        margin-top: 2rem;
+    }
+    #weatherDashboard {
+        padding-top: 5rem;
+    }
+}
