@@ -9,29 +9,39 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <header class = "bg-dark text-white text-center p-2">
+    <header class ="bg-dark text-white text-center p-2">
         <h1>Weather Dashboard</h1>
     </header>
     <main class="container-fluid">
         <div class = "row">
             <div class="col-12 col-md-3 p-2 search-column">
-                <form class = "border p-2" id = "city-search-form">
-                    <h4>Submit a city name to find the current weather and forecast:</h2>
-                    <input id="city" type ="text" autofocus ="true" class ="form-input"/>
-                    <button class ="btn btn-primary" type = "submit">Search <i class="fa fa-search" style="font-size:16px;color:white"></i></button>
-                </form>
-                <div class = "past-search border" id = "past-search-buttons"></div>
+                <section class="top-banner">
+                    <div class="container">
+                      <form class="border p-2">
+                        <input id="city" type="text" placeholder="Enter a city:" autofocus="true">
+                        <button class="btn" type="submit">Search <i class="fa fa-search" style="font-size:16px;color:white"></i></button>
+                        <span class="msg"></span>
+                      </form>
+                    </div>
+                  </section>
+                  <section class="ajax-section">
+                    <div class="container">
+                      <ul class="cities"></ul>
+                    </div>
+                  </section>
+                <div class = "searchHistory border" id = "searchHistoryButtons"></div>
             </div>
             <div class="col-12 col-md-9">
-                <div class = "row border selected-city" id = "current-forecast">
+                <div class = "row border selectedCity" id = "currentForecast">
                     <div class = "col-12">
-                        <h2 id="searched-city"></h2>
-                        <div id = "current-weather-container" class = "list-group"></div>
+                        <h2 id="searchedCity"></h2>
+                        <div id = "currentWeatherContainer" class = "list-group"></div>
                     </div>  
                 </div>
                 <div class = "row border" id = "five-day-forecast">
                         <h2 class= "col-12" id = "forecast"></h2>
-                        <div class = "d-flex" id = "fiveday-container"></div>
+                        <!-- flexbox container... -->
+                        <div class = "d-flex" id = "fiveDayContainer"></div>
                 </div>  
             </div>
         </div>
@@ -42,87 +52,4 @@
     <script src="./Assets/JS/script.js"></script>
 </body>
 </html>
-    <!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./Assets/CSS/style.css"/>
-</head>
-<body background="./Assets/Images/weather.jpg">
-<div id="container">
-  <div class="subcontainer-outer">
-    <div class="searchContainer">
-      <div class="content" >
-      </div>
-      <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
-        <input type="text" placeholder="Enter your city here">
-        <button type="submit"><i class="fa fa-search" class="clickToSubmit"></i></button>
-      </form>
-      <div class="content">
-      </div>
-    </div>
-  </div>
-  <div class="subcontainer-outer">
-    <div class="subcontainer">
-      <div class="content">
-      </div>
-      <div class="content">
-      </div>
-    </div>
-  </div>
-        <div id="weatherBackground" class="d-flex">
-            <div class="overlay"></div>
-            <div class="container" id="mainDashboard">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div id="displayContainer">
-                            <div class="currentWeather">
-                                <h1 id="cityTitle"></h1>
-                                <div id="currentDay"></div>
-                                <div class="clearfix">
-                                    <div id="cityTemp"></div>
-                                    <div>
-                                        <span id="cityConditions"></span>
-                                        <span id="cityIcon"></span>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-4 col-md-3 col-lg-2">
-                                        <div id="cityHumidity"></div>
-                                    </div>
-                                    <div class="col-4 col-md-3 col-lg-2">
-                                        <div id="cityWind"></div>
-                                    </div>
-                                    <div class="col-4 col-md-3 col-lg-2">
-                                        <div id="cityUVI"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="fiveDayWeather"></div>
-                        </div>            
-                    </div>
-                        <!-- <div id="searchContainer">
-                            <div class="row">                         
-                                    <div class="search-form">
-                                        <input type="text" id="searchField" placeholder="Search..."/>
-                                    </div>                        
-                                    <div class="historyContainer"></div>
-                                </div>
-                            </div> -->
-                        </div>
-                    </div>
-            </div>
-        </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./Assets/JS/script.js"></script>
-</body>
-</html> --> -->
+ 
