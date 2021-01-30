@@ -10,12 +10,10 @@ form.addEventListener("submit", e => {
   e.preventDefault();
     let inputVal = input.value;
 });
-const apiKey = "0ca33d0294b3d8458a733eb1abbf9384";
-const inputVal = input.value;
- 
-api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+let apiKey = "0ca33d0294b3d8458a733eb1abbf9384";
+let inputVal = input.value;
 
-const url="api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}";
+let url="https://api.openweathermap.org/data/2.5/weather?q=" +inputVal+ "&appid=0ca33d0294b3d8458a733eb1abbf9384";
  fetch(url)
   .then(response => response.json())
   .then(data => {
