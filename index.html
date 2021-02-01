@@ -3,32 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="./Assets/CSS/style.css">
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <header class ="bg-dark text-white text-center p-2">
-        <h1>Weather Dashboard</h1>
+    <header>
+        <div class="heading">
+            <div>
+                <h1>Weather Dashboard</h1>
+            </div>
+        </div>
     </header>
-    <main class="container-fluid">
+        <!-- HEADER content -->
+    <main class="container-fluid" id="mainDashboard">
         <div class = "row">
             <div class="col-12 col-md-3 p-2 search-column">
                 <section class="top-banner">
-                    <div class="container">
-                      <form class="border p-2">
+                    <div class="container" id="searchContainer">
+                      <form>
                         <input id="city" type="text" placeholder="Enter a city:" autofocus="true">
-                        <button class="btn" type="submit">Search <i class="fa fa-search"></i></button>
+						<input type="button" value="Search" onclick="getWeather()">
                         <span class="msg"></span>
                       </form>
                     </div>
+					<div class="result">
+						<textarea readonly id="output" placeholder="Your Weather information Will Appear Here"></textarea>
+					</div>
                   </section>
-                  <section class="ajax-section">
+				  <section class="ajax-section">
                     <div class="container">
                       <ul class="cities"></ul>
                     </div>
                   </section>
+                    <!-- save and display recent cities searched -->
                 <div class = "searchHistory border" id = "searchHistoryButtons"></div>
             </div>
             <div class="col-12 col-md-9">
@@ -52,4 +60,3 @@
     <script src="./Assets/JS/script.js"></script>
 </body>
 </html>
- 
